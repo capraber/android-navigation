@@ -23,12 +23,11 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
-import com.google.android.material.navigation.NavigationView
-import kotlinx.android.synthetic.main.navigation_activity.*
+import kotlinx.android.synthetic.main.navigation_activity.nav_view
+import kotlinx.android.synthetic.main.navigation_activity.toolbar
 
 /**
  * A simple activity demonstrating use of a NavHostFragment with a navigation drawer.
