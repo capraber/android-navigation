@@ -20,7 +20,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="8dp"
+    android:padding="@dimen/padding_deep_link_fragment"
     tools:context="com.example.android.codelabs.navigation.fragments.DeepLinkFragment">
 
     <TextView

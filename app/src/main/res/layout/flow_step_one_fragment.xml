@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:text="@string/step_one"
         android:textAlignment="center"
-        android:textSize="52sp"
+        android:textSize="@dimen/text_size_steps"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -34,10 +34,10 @@
         app:layout_constraintVertical_bias="0.25" />
 
     <Button
-        android:id="@+id/next_button"
+        android:id="@+id/next_button_step_one"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/next_step_button"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text" />
+        app:layout_constraintTop_toBottomOf="@+id/text_step_one" />
 </androidx.constraintlayout.widget.ConstraintLayout>
