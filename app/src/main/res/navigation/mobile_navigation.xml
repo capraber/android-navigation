@@ -17,7 +17,7 @@
     app:startDestination="@+id/home_dest">
     <fragment
         android:id="@+id/home_dest"
-        android:name="com.example.android.codelabs.navigation.HomeFragment"
+        android:name="com.example.android.codelabs.navigation.fragments.HomeFragment"
         android:label="@string/home"
         tools:layout="@layout/home_fragment">
 
@@ -35,7 +35,7 @@
 
     <fragment
         android:id="@+id/flow_step_one_dest"
-        android:name="com.example.android.codelabs.navigation.FlowStepFragment"
+        android:name="com.example.android.codelabs.navigation.fragments.FlowStepFragment"
         tools:layout="@layout/flow_step_one_fragment">
         <argument
             android:name="flowStepNumber"
@@ -50,7 +50,7 @@
 
     <fragment
         android:id="@+id/flow_step_two_dest"
-        android:name="com.example.android.codelabs.navigation.FlowStepFragment"
+        android:name="com.example.android.codelabs.navigation.fragments.FlowStepFragment"
         tools:layout="@layout/flow_step_two_fragment">
 
         <argument
@@ -67,14 +67,14 @@
     <!-- TODO STEP 4 Create a new navigation destination pointing to SettingsFragment -->
     <!--<fragment-->
         <!--android:id="@+id/settings_dest"-->
-        <!--android:name="com.example.android.codelabs.navigation.SettingsFragment"-->
+        <!--android:name="com.example.android.codelabs.navigation.fragments.SettingsFragment"-->
         <!--android:label="@string/settings"-->
         <!--tools:layout="@layout/settings_fragment" />-->
     <!-- TODO END STEP 4 -->
 
     <fragment
         android:id="@+id/deeplink_dest"
-        android:name="com.example.android.codelabs.navigation.DeepLinkFragment"
+        android:name="com.example.android.codelabs.navigation.fragments.DeepLinkFragment"
         android:label="@string/deeplink"
         tools:layout="@layout/deeplink_fragment">
 
@@ -87,4 +87,9 @@
 
         <!-- TODO END STEP 11.1 -->
     </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.android.codelabs.navigation.fragments.SettingsFragment"
+        android:label="settings_fragment"
+        tools:layout="@layout/settings_fragment" />
 </navigation>
