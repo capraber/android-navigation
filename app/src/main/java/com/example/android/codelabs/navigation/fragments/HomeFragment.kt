@@ -14,11 +14,12 @@
  * limitations under the License.
  */
 
-package com.example.android.codelabs.navigation
+package com.example.android.codelabs.navigation.fragments
 
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
+import com.example.android.codelabs.navigation.R
 
 /**
  * Fragment used to show how to navigate to another destination

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.android.codelabs.navigation
+package com.example.android.codelabs.navigation.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -22,6 +22,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
+import com.example.android.codelabs.navigation.R
+import kotlinx.android.synthetic.main.flow_step_one_fragment.*
 
 /**
  * Presents how multiple steps flow could be implemented.
@@ -51,7 +53,7 @@ class FlowStepFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        view.findViewById<View>(R.id.next_button).setOnClickListener(
+        next_button.setOnClickListener(
             Navigation.createNavigateOnClickListener(R.id.next_action)
         )
     }

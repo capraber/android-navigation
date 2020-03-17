@@ -14,13 +14,14 @@
  * limitations under the License.
  */
 
-package com.example.android.codelabs.navigation
+package com.example.android.codelabs.navigation.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.android.codelabs.navigation.R
 
 /**
  * A simple [Fragment] subclass.

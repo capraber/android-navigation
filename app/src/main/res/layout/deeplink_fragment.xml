@@ -21,10 +21,10 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="8dp"
-    tools:context="com.example.android.codelabs.navigation.DeepLinkFragment">
+    tools:context="com.example.android.codelabs.navigation.fragments.DeepLinkFragment">
 
     <TextView
-        android:id="@+id/text"
+        android:id="@+id/text_deeplink"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

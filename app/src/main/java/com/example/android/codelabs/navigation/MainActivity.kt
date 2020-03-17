@@ -28,6 +28,7 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import com.google.android.material.navigation.NavigationView
+import kotlinx.android.synthetic.main.navigation_activity.*
 
 /**
  * A simple activity demonstrating use of a NavHostFragment with a navigation drawer.
@@ -38,8 +39,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.navigation_activity)
-
-        val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
 
         val host: NavHostFragment = supportFragmentManager
@@ -105,10 +104,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         val retValue = super.onCreateOptionsMenu(menu)
-        val navigationView = findViewById<NavigationView>(R.id.nav_view)
         // The NavigationView already has these same navigation items, so we only add
         // navigation items to the menu here if there isn't a NavigationView
-        if (navigationView == null) {
+        if (nav_view == null) {
             menuInflater.inflate(R.menu.overflow_menu, menu)
             return true
         }

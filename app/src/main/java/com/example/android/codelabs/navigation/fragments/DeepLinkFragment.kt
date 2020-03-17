@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.android.codelabs.navigation
+package com.example.android.codelabs.navigation.fragments
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -25,11 +25,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
 import androidx.core.app.NotificationCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.example.android.codelabs.navigation.R
+import kotlinx.android.synthetic.main.deeplink_fragment.*
 
 /**
  * Fragment used to show how to deep link to a destination
@@ -45,15 +45,13 @@ class DeepLinkFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        val textView = view.findViewById<TextView>(R.id.text)
-        textView.text = arguments?.getString("myarg")
+        text_deeplink.text = arguments?.getString("myarg")
 
         val notificationButton = view.findViewById<Button>(R.id.send_notification_button)
         notificationButton.setOnClickListener {
-            val editArgs = view.findViewById<EditText>(R.id.args_edit_text)
+            args_edit_text
             val args = Bundle()
-            args.putString("myarg", editArgs.getText().toString())
+            args.putString("myarg", args_edit_text.toString())
 
             val deeplink = findNavController().createDeepLink()
                     .setDestination(R.id.deeplink_dest)
