@@ -23,9 +23,8 @@ import android.view.MenuInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.Navigation
-import androidx.navigation.fragment.findNavController
 import com.example.android.codelabs.navigation.R
+import com.example.android.codelabs.navigation.mvp.HomeFragmentContracts
 import com.example.android.codelabs.navigation.mvp.presenter.HomeFragmentPresenter
 import com.example.android.codelabs.navigation.mvp.view.HomeFragmentView
 import kotlinx.android.synthetic.main.home_fragment.navigate_action_button
@@ -36,7 +35,7 @@ import kotlinx.android.synthetic.main.home_fragment.navigate_destination_button
  */
 class HomeFragment : Fragment() {
 
-    private val presenter = HomeFragmentPresenter(HomeFragmentView())
+    private val presenter: HomeFragmentContracts.Presenter = HomeFragmentPresenter(HomeFragmentView())
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         setHasOptionsMenu(true)
