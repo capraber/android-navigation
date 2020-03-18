@@ -23,7 +23,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.example.android.codelabs.navigation.R
-import kotlinx.android.synthetic.main.flow_step_one_fragment.next_button_step_one
+import kotlinx.android.synthetic.main.flow_step_one_fragment.next_button
 
 /**
  * Presents how multiple steps flow could be implemented.
@@ -53,7 +53,7 @@ class FlowStepFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        next_button_step_one.setOnClickListener(
+        next_button.setOnClickListener(
             Navigation.createNavigateOnClickListener(R.id.next_action)
         )
     }
