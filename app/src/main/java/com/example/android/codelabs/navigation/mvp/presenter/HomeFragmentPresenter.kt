@@ -1,15 +1,13 @@
 package com.example.android.codelabs.navigation.mvp.presenter
 
+import android.view.View
 import androidx.fragment.app.Fragment
-import androidx.navigation.Navigation
-import androidx.navigation.fragment.NavHostFragment.findNavController
-import com.example.android.codelabs.navigation.R
-import com.example.android.codelabs.navigation.mvp.HomeFragmentContracts
+import com.example.android.codelabs.navigation.mvp.contracts.HomeFragmentContracts
 
 class HomeFragmentPresenter(private val view: HomeFragmentContracts.View) : HomeFragmentContracts.Presenter {
 
     override fun destinationNextStep(context: Fragment) {
-        findNavController(context).navigate(R.id.flow_step_one_dest, null, view.getAnimation())
+        view.destinationNextStep(context)
     }
-    override fun actionNextStep() = Navigation.createNavigateOnClickListener(R.id.next_action, null)
+    override fun actionNextStep(): View.OnClickListener = view.actionNextStep()
 }

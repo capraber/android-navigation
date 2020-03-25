@@ -1,4 +1,4 @@
-package com.example.android.codelabs.navigation.mvp
+package com.example.android.codelabs.navigation.mvp.contracts
 
 import android.view.View.OnClickListener
 import androidx.fragment.app.Fragment
@@ -11,6 +11,8 @@ interface HomeFragmentContracts {
     }
 
     interface View {
-        fun getAnimation() : NavOptions
+        fun destinationNextStep(context: Fragment)
+        fun actionNextStep(): OnClickListener
     }
+
 }
