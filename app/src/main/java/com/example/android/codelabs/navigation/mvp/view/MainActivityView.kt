@@ -46,18 +46,20 @@ class MainActivityView(context: MainActivity) : MainActivityContracts.View {
 
     override fun setupActionBar() {
         activity?.let {
-            setupActionBarWithNavController(activity, navController, appBarConfiguration)
+            setupActionBarWithNavController(it, navController, appBarConfiguration)
         }
     }
 
     override fun destinationChangedListener() {
         navController.addOnDestinationChangedListener { _, destination, _ ->
-            val dest: String = try {
-                activity!!.resources.getResourceName(destination.id)
-            } catch (e: Resources.NotFoundException) {
-                destination.id.toString()
+            activity?.run {
+                val dest: String = try {
+                    resources.getResourceName(destination.id)
+                } catch (e: Resources.NotFoundException) {
+                    destination.id.toString()
+                }
+                navigationToast(dest)
             }
-            navigationToast(dest)
         }
     }
 
@@ -71,7 +73,7 @@ class MainActivityView(context: MainActivity) : MainActivityContracts.View {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         activity?.let {
-            return item.onNavDestinationSelected(findNavController(activity, R.id.my_nav_host_fragment))
+                return item.onNavDestinationSelected(findNavController(it, R.id.my_nav_host_fragment))
         }
         return false
     }
@@ -79,7 +81,7 @@ class MainActivityView(context: MainActivity) : MainActivityContracts.View {
 
     override fun onSupportNavigateUp(): Boolean {
         activity?.let {
-            return findNavController(activity, R.id.my_nav_host_fragment).navigateUp(appBarConfiguration)
+            return findNavController(it, R.id.my_nav_host_fragment).navigateUp(appBarConfiguration)
         }
         return false
     }
