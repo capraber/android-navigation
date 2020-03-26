@@ -6,8 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.android.codelabs.navigation.mvp.contracts.MainActivityContracts
 
 class MainActivityPresenter(private val view: MainActivityContracts.View) : MainActivityContracts.Presenter{
-    override fun init(context: AppCompatActivity) {
-        view.init(context)
+    override fun init() {
+        view.init()
         view.setupActionBar()
         view.setupBottomNavMenu()
         view.setupNavigationMenu()

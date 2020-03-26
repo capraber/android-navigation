@@ -31,12 +31,12 @@ import com.example.android.codelabs.navigation.mvp.view.MainActivityView
  * A simple activity demonstrating use of a NavHostFragment with a navigation drawer.
  */
 class MainActivity : AppCompatActivity() {
-    private val presenter: MainActivityContracts.Presenter = MainActivityPresenter(MainActivityView())
+    private val presenter: MainActivityContracts.Presenter = MainActivityPresenter(MainActivityView(this))
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.navigation_activity)
-        presenter.init(this)
+        presenter.init()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
