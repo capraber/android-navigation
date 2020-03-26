@@ -4,9 +4,8 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import com.example.android.codelabs.navigation.mvp.contracts.MainActivityContracts
-import com.example.android.codelabs.navigation.mvp.view.MainActivityView
 
-class MainActivityPresenter(private val view: MainActivityContracts.View = MainActivityView()) : MainActivityContracts.Presenter{
+class MainActivityPresenter(private val view: MainActivityContracts.View) : MainActivityContracts.Presenter{
     override fun init(context: AppCompatActivity) {
         view.init(context)
         view.setupActionBar()
