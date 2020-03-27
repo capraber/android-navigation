@@ -13,7 +13,6 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.onNavDestinationSelected
 import androidx.navigation.ui.setupWithNavController
 import com.example.android.codelabs.navigation.MainActivity
-import com.example.android.codelabs.navigation.NAVIGATED_TO
 import com.example.android.codelabs.navigation.R
 import com.example.android.codelabs.navigation.mvp.contracts.MainActivityContracts
 import kotlinx.android.synthetic.main.navigation_activity.bottom_nav_view
@@ -86,6 +85,6 @@ class MainActivityView(context: MainActivity) : MainActivityContracts.View {
     }
 
     private fun navigationToast(dest: String) {
-        Toast.makeText(activity, "${R.string.navigated_to}$dest", Toast.LENGTH_SHORT).show()
+        Toast.makeText(activity, "${activity?.resources?.getString(R.string.navigated_to)}$dest", Toast.LENGTH_SHORT).show()
     }
 }
