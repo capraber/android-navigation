@@ -78,7 +78,6 @@ class MainActivityView(context: MainActivity) : MainActivityContracts.View {
         return false
     }
 
-
     override fun onSupportNavigateUp(): Boolean {
         activity?.run {
             return findNavController(this, R.id.my_nav_host_fragment).navigateUp(appBarConfiguration)
@@ -87,7 +86,6 @@ class MainActivityView(context: MainActivity) : MainActivityContracts.View {
     }
 
     private fun navigationToast(dest: String) {
-        Toast.makeText(activity, "$NAVIGATED_TO$dest", Toast.LENGTH_SHORT).show()
+        Toast.makeText(activity, "${R.string.navigated_to}$dest", Toast.LENGTH_SHORT).show()
     }
-
 }

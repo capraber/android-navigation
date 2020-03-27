@@ -6,4 +6,3 @@ const val DEEP_LINKS = "Deep Links"
 const val NAVIGATION_TITLE = "Navigation"
 const val NOTIFICATION_CONTENT = "Deep link to Android"
 const val STEP_TWO = 2
-const val NAVIGATED_TO ="Navigated to "
