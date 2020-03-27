@@ -45,8 +45,8 @@ class MainActivityView(context: MainActivity) : MainActivityContracts.View {
     }
 
     override fun setupActionBar() {
-        activity?.let {
-            setupActionBarWithNavController(it, navController, appBarConfiguration)
+        activity?.run {
+            setupActionBarWithNavController(this, navController, appBarConfiguration)
         }
     }
 
@@ -64,7 +64,7 @@ class MainActivityView(context: MainActivity) : MainActivityContracts.View {
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        activity?.nav_view?.let {
+        activity?.nav_view?.run {
             return false
         }
         activity?.menuInflater?.inflate(R.menu.overflow_menu, menu)
@@ -72,16 +72,16 @@ class MainActivityView(context: MainActivity) : MainActivityContracts.View {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        activity?.let {
-                return item.onNavDestinationSelected(findNavController(it, R.id.my_nav_host_fragment))
+        activity?.run {
+                return item.onNavDestinationSelected(findNavController(this, R.id.my_nav_host_fragment))
         }
         return false
     }
 
 
     override fun onSupportNavigateUp(): Boolean {
-        activity?.let {
-            return findNavController(it, R.id.my_nav_host_fragment).navigateUp(appBarConfiguration)
+        activity?.run {
+            return findNavController(this, R.id.my_nav_host_fragment).navigateUp(appBarConfiguration)
         }
         return false
     }

@@ -39,15 +39,8 @@ class MainActivity : AppCompatActivity() {
         presenter.init()
     }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // The NavigationView already has these same navigation items, so we only add
-        // navigation items to the menu here if there isn't a NavigationView
-        return presenter.onCreateOptionsMenu(menu) || super.onCreateOptionsMenu(menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return presenter.onOptionsItemSelected(item) || super.onOptionsItemSelected(item)
-    }
+    override fun onCreateOptionsMenu(menu: Menu): Boolean = presenter.onCreateOptionsMenu(menu) || super.onCreateOptionsMenu(menu)
+    override fun onOptionsItemSelected(item: MenuItem): Boolean = presenter.onOptionsItemSelected(item) || super.onOptionsItemSelected(item)
 
     override fun onSupportNavigateUp(): Boolean {
         // Allows NavigationUI to support proper up navigation or the drawer layout
