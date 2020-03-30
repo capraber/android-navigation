@@ -2,7 +2,6 @@ package com.example.android.codelabs.navigation.mvp.presenter
 
 import android.view.Menu
 import android.view.MenuItem
-import androidx.appcompat.app.AppCompatActivity
 import com.example.android.codelabs.navigation.mvp.contracts.MainActivityContracts
 
 class MainActivityPresenter(private val view: MainActivityContracts.View) : MainActivityContracts.Presenter{
@@ -14,15 +13,7 @@ class MainActivityPresenter(private val view: MainActivityContracts.View) : Main
         view.destinationChangedListener()
     }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        return view.onCreateOptionsMenu(menu)
-    }
-
-    override fun onSupportNavigateUp(): Boolean {
-        return view.onSupportNavigateUp()
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return view.onOptionsItemSelected(item)
-    }
+    override fun onCreateOptionsMenu(menu: Menu): Boolean = view.onCreateOptionsMenu(menu)
+    override fun onSupportNavigateUp(): Boolean = view.onSupportNavigateUp()
+    override fun onOptionsItemSelected(item: MenuItem): Boolean = view.onOptionsItemSelected(item)
 }
