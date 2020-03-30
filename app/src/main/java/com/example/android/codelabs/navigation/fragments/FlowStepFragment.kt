@@ -22,7 +22,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.navArgs
 import com.example.android.codelabs.navigation.R
+import com.example.android.codelabs.navigation.STEP_TWO
 import kotlinx.android.synthetic.main.flow_step_one_fragment.next_button
 
 /**
@@ -30,22 +32,12 @@ import kotlinx.android.synthetic.main.flow_step_one_fragment.next_button
  */
 class FlowStepFragment : Fragment() {
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         setHasOptionsMenu(true)
+        val safeArgs: FlowStepFragmentArgs by navArgs()
 
-        val flowStepNumber = arguments?.getInt("flowStepNumber")
-
-        // TODO STEP 8 - Use type-safe arguments - remove previous line!
-//        val safeArgs: FlowStepFragmentArgs by navArgs()
-//        val flowStepNumber = safeArgs.flowStepNumber
-        // TODO END STEP 8
-
-        return when (flowStepNumber) {
-            2 -> inflater.inflate(R.layout.flow_step_two_fragment, container, false)
+        return when (safeArgs.flowStepNumber) {
+            STEP_TWO -> inflater.inflate(R.layout.flow_step_two_fragment, container, false)
             else -> inflater.inflate(R.layout.flow_step_one_fragment, container, false)
         }
     }
@@ -53,8 +45,6 @@ class FlowStepFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        next_button.setOnClickListener(
-            Navigation.createNavigateOnClickListener(R.id.next_action)
-        )
+        next_button.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.next_action))
     }
 }

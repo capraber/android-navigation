@@ -24,7 +24,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.android.codelabs.navigation.R
-import com.example.android.codelabs.navigation.mvp.HomeFragmentContracts
+import com.example.android.codelabs.navigation.mvp.contracts.HomeFragmentContracts
 import com.example.android.codelabs.navigation.mvp.presenter.HomeFragmentPresenter
 import com.example.android.codelabs.navigation.mvp.view.HomeFragmentView
 import kotlinx.android.synthetic.main.home_fragment.navigate_action_button
