@@ -22,18 +22,13 @@ import android.content.Context
 import android.os.Bundle
 import android.widget.RemoteViews
 import androidx.navigation.NavDeepLinkBuilder
+import com.example.android.codelabs.navigation.mvp.contracts.DeepLinkAppWidgetProviderContracts
+import com.example.android.codelabs.navigation.mvp.presenter.DeepLinkAppWidgetProviderPresenter
+import com.example.android.codelabs.navigation.mvp.view.DeepLinkAppWidgetProviderView
 
 class DeepLinkAppWidgetProvider : AppWidgetProvider() {
+    val presenter : DeepLinkAppWidgetProviderContracts.Presenter = DeepLinkAppWidgetProviderPresenter(DeepLinkAppWidgetProviderView())
     override fun onUpdate(context: Context, appWidgetManager: AppWidgetManager, appWidgetIds: IntArray) {
-        val remoteViews = RemoteViews(context.packageName, R.layout.deep_link_appwidget)
-        val args = Bundle()
-        args.putString(MY_ARG, "From Widget")
-        val pendingIntent = NavDeepLinkBuilder(context)
-                .setGraph(R.navigation.mobile_navigation)
-                .setDestination(R.id.deeplink_dest)
-                .setArguments(args)
-                .createPendingIntent()
-        remoteViews.setOnClickPendingIntent(R.id.deep_link_button, pendingIntent)
-        appWidgetManager.updateAppWidget(appWidgetIds, remoteViews)
+        presenter.onUpdate(context, appWidgetManager, appWidgetIds)
     }
 }
