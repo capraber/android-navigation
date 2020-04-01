@@ -32,4 +32,6 @@
     <string name="finish_button">Finish Flow</string>
     <string name="send_deep_link_notification_button">Send deep link notification</string>
     <string name="navigated_to">Navigated to </string>
+    <string name="navigation_title">Navigation</string>
+    <string name="from_widget">From Widget</string>
 </resources>
