@@ -13,7 +13,7 @@ class DeepLinkAppWidgetProviderView : DeepLinkAppWidgetProviderContracts.View {
     override fun updateDeepLink(context: Context, appWidgetManager: AppWidgetManager, appWidgetIds: IntArray) {
         val remoteViews = RemoteViews(context.packageName, R.layout.deep_link_appwidget)
         val args = Bundle()
-        args.putString(MY_ARG, "From Widget")
+        args.putString(MY_ARG, context.resources.getString(R.string.from_widget))
         val pendingIntent = NavDeepLinkBuilder(context)
             .setGraph(R.navigation.mobile_navigation)
             .setDestination(R.id.deeplink_dest)

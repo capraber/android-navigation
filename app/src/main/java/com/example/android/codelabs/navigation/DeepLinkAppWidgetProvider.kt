@@ -19,9 +19,6 @@ package com.example.android.codelabs.navigation
 import android.appwidget.AppWidgetManager
 import android.appwidget.AppWidgetProvider
 import android.content.Context
-import android.os.Bundle
-import android.widget.RemoteViews
-import androidx.navigation.NavDeepLinkBuilder
 import com.example.android.codelabs.navigation.mvp.contracts.DeepLinkAppWidgetProviderContracts
 import com.example.android.codelabs.navigation.mvp.presenter.DeepLinkAppWidgetProviderPresenter
 import com.example.android.codelabs.navigation.mvp.view.DeepLinkAppWidgetProviderView

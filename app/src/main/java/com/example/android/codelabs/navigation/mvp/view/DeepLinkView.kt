@@ -13,8 +13,6 @@ import com.example.android.codelabs.navigation.DEEPLINK_ID
 import com.example.android.codelabs.navigation.DEEP_LINKS
 import com.example.android.codelabs.navigation.ID
 import com.example.android.codelabs.navigation.MY_ARG
-import com.example.android.codelabs.navigation.NAVIGATION_TITLE
-import com.example.android.codelabs.navigation.NOTIFICATION_CONTENT
 import com.example.android.codelabs.navigation.R
 import com.example.android.codelabs.navigation.mvp.contracts.DeepLinkContracts
 import java.lang.ref.WeakReference
@@ -40,8 +38,7 @@ class DeepLinkView(context: Fragment) : DeepLinkContracts.View {
         fragment?.context?.run {
             notificationManager = this.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                notificationManager.createNotificationChannel(NotificationChannel(
-                    DEEPLINK_ID, DEEP_LINKS, NotificationManager.IMPORTANCE_HIGH))
+                notificationManager.createNotificationChannel(NotificationChannel(DEEPLINK_ID, DEEP_LINKS, NotificationManager.IMPORTANCE_HIGH))
             }
         }
     }
@@ -49,7 +46,7 @@ class DeepLinkView(context: Fragment) : DeepLinkContracts.View {
     private fun setNotificationBuilder(message: String) {
         fragment?.context?.run {
             val builder = NotificationCompat.Builder(this, DEEPLINK_ID)
-                .setContentTitle(NAVIGATION_TITLE)
+                .setContentTitle(resources.getString(R.string.navigation_title))
                 .setContentText(message)
                 .setSmallIcon(R.drawable.ic_android)
                 .setContentIntent(deepLink)
